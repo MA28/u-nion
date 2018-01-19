@@ -1,0 +1,23 @@
+<% var title = 'Formulaire login' %>
+
+<% include head %>
+
+<section id="form"><!--form-->
+    <div class="container">
+
+        <div class="login-form"><!--login form-->
+            <h2 style="text-align : center;">Login to your account</h2>
+            <form method="post" action="/pages/login/loginVerif">
+                <input style="display: block; margin : auto; width:50%;" type="email" name="email" placeholder="Username" autofocus/>
+                <br/>
+                <input style="display: block; margin : auto; width:50%;" type="password" name="password" placeholder="Password" />
+                <br/>
+                <button style="display: block; margin : auto; width:20%;" type="submit" value="Login" class="btn btn-default">Login</button>
+            </form>
+        </div><!--/login form-->
+
+
+    </div>
+</section><!--/form-->
+
+<% include foot %>
