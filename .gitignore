@@ -1,7 +1,6 @@
 # Node build artifacts
 npm-debug.log
 package-lock.json
-
 # Local development
 *.env
 *.dev
@@ -70,3 +69,4 @@ typings/
 # dotenv environment variables file
 .env
 
+.idea/
