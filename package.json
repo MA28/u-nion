@@ -14,10 +14,12 @@
     "body-parser": "^1.14.2",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
+    "express-session": "^1.15.6",
+    "helmet": "^3.10.0",
     "log4js": "^0.6.38",
     "morgan": "^1.6.1",
     "mysql2": "^1.5.1",
-    "sequelize": "^4.31.2",
+    "sequelize": "^4.32.2",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {

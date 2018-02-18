@@ -1,0 +1,28 @@
+<% var title = 'Mon Compte' %>
+<% include head %>
+
+<h1>Bienvenue sur votre panel utilisateur</h1>
+
+<form method="POST">
+    <p>
+        <label for="name">Username : </label>
+        <input type="text" name="nomUser" id="name" value="<%= nom %>">
+    </p>
+    <p>
+        <label for="Email">Email : </label>
+        <input type="text" id="Email" name="emailUser" value="<%= email %>">
+    </p>
+    <p>
+        <label for="ancienMdp">Ancien mot de passe</label>
+        <input type="password" id="ancienMdp" name="ancienMdp">
+    </p>
+    <p>
+        <label for="newMdp">Nouveau mot de passe</label>
+        <input type="password" id="newMdp" name="newMdp">
+    </p>
+    <p>
+        <button type="submit">Modifier le profil</button>
+    </p>
+</form>
+
+<% include foot %>
