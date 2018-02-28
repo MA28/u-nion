@@ -1,4 +1,17 @@
-
-  <% include head.ejs %>
-
-  <% include foot.ejs %>
+<% include head.ejs %>
+<section>
+    <div class="container">
+        <div class="row">
+            <h2 class="title text-center">Annonces</h2>
+            <% listeAnnonces.forEach(function(annonce){ %>
+            <div style="margin-bottom:5%;" class="col-sm-3">
+                <h2><%= annonce.contenu %></h2>
+            </div>
+            <div style="margin-bottom:5%;" class="col-sm-3">
+                <h2>Posté par : <%= annonce.username %></h2>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+<% include foot.ejs %>

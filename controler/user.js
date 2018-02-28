@@ -160,7 +160,6 @@ module.exports.getProfil = function(req, res){
 };
 
 module.exports.editProfil = function (req, res) {
-    // TODO : Quand on change un élément sans changer le nouveau mdp, met un mdp bizarre
     var email = req.body.emailUser;
     var username = req.body.nomUser;
     var oldMdp = req.body.ancienMdp;
@@ -188,7 +187,7 @@ module.exports.editProfil = function (req, res) {
     isIdUnique(email, username).then(function (isUnique) { // CAS : LES 2 SONT UNIQUES
         if (isUnique) {
             if (req.body.newMdp == ''){
-                newMdp == oldMdp;
+                newMdp = oldMdp;
             }
             user.update({
                     username: req.body.nomUser,
@@ -215,7 +214,7 @@ module.exports.editProfil = function (req, res) {
         }
         else if (req.body.nomUser == req.session.username && req.body.emailUser == req.session.email && req.body.newMdp != '' ){
             if (req.body.newMdp == ''){
-                newMdp == oldMdp;
+                newMdp = oldMdp;
             }
             user.update({
                     password: req.body.newMdp
@@ -238,7 +237,7 @@ module.exports.editProfil = function (req, res) {
         }
         else if (req.body.emailUser == req.session.email) { // CAS : L'USER NE CHANGE PAS SON EMAIL
             if (req.body.newMdp == ''){
-                newMdp == oldMdp;
+                newMdp = oldMdp;
             }
             isUsernameUnique(username).then(function (isUsernameUnique) {
                 if (isUsernameUnique) {
@@ -274,7 +273,7 @@ module.exports.editProfil = function (req, res) {
         }
         else if (req.body.nomUser == req.session.username) { // CAS : L'USER NE CHANGE PAS SON USERNAME
             if (req.body.newMdp == ''){
-                newMdp == oldMdp;
+                newMdp = oldMdp;
             }
             isEmailUnique(email).then(function (isEmailUnique) {
                     if (isEmailUnique) {

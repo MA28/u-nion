@@ -34,32 +34,35 @@ logger.info('server start');
 
 // Variables pour controler
 var userControler = require("./controler/user.js");
+var annonceControler = require('./controler/annonce.js');
 
 app.get('/', function(req, res){
-    res.render('index');
+    res.redirect('index');
 });
-app.get('/index', function(req, res){
-    res.render('index');
-});
+app.get('/index', annonceControler.getAnnonces);
 
 app.get('/register', function(req, res){
     if(!req.session.id_user)
         res.render('register');
     else
-        res.render('index');
+        res.redirect('index');
+});
+
+app.get('/annonce', function(req, res){
+    res.render('annonce');
 });
 
 app.get('/login', function(req, res){
     if (!req.session.id_user)
         res.render('login');
     else
-        res.render('index');
+        res.redirect('index');
 });
 app.get('/myaccount', userControler.getProfil);
 app.post('/myaccount', userControler.editProfil);
-
 app.get('/disconnect', userControler.disconnect);
 app.post('/checkRegister', userControler.inscription);
 app.post('/checkLogin', userControler.login);
 
+app.post('/posterAnnonce', annonceControler.posterAnnonce);
 app.listen(process.env.PORT||1314);
