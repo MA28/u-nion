@@ -1,0 +1,40 @@
+/*
+-------------------------------------------------------
+---------- FEUILLE DE STYLES DES FORMULAIRES ----------
+-------------------------------------------------------
+*/
+
+/*
+    Style formulaire login
+*/
+.login-form {
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #9933CC;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.login-form legend {
+    text-align: center;
+}
+
+/*
+    Style formulaire enregistrement
+*/
+
+.register-form {
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #2A9FD6;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.register-form legend {
+    text-align: center;
+}

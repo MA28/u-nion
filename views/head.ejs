@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/form.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootswatch.css"/>
 </head>
-<header id="header"><!--header-->
 
-    <nav style="background-color: #494441;" class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/index">U-nion</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li ><a href="/index">Accueil</a></li>
-                <% if (!_username) { %>
-                <li ><a href="/login">Se connecter</a></li>
+<header class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">U-NION</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+                aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" style="">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/index">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <% if (_username) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/myaccount">Mon compte</a>
+                </li>
                 <% } %>
                 <% if (_username) { %>
-                <li class="myaccount"><a href="/myaccount">Mon compte</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/annonce">Poster une annonce</a>
+                </li>
                 <% } %>
                 <% if (_username) { %>
-                <li class="classement"><a href="/annonce">Poster une annonce</a></li>
-                <% } %>
-                <% if (_username) { %>
-                <li class="disconnect"><a href="/disconnect">Déconnexion</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/disconnect">Déconnexion</a>
+                </li>
                 <% } %>
             </ul>
-            <% if (_rank == 1 ) { %>
-            <form method="get" action="/admin">
-                <button type="submit" class="btn btn-danger navbar-btn">Admin</button>
-            </form>
-            <% }  if (!_username) { %>
-            <form method="get" action="/register">
-                <button type="submit" class="btn btn-danger navbar-btn">S'enregistrer</button>
-            </form>
-            <% } %>
-
+            <ul class="navbar-nav my-2 my-lg-0">
+                <% if (_rank == 1 ) { %>
+                <li class="nav-item">
+                    <a href="/admin" class="btn btn-danger navbar-btn mr-sm-2">Admin</a></li>
+                <% }  if (!_username) { %>
+                <li class="nav-item">
+                    <a href="/login" class="btn btn-outline-info mr-sm-2">Connexion</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/register" class="btn btn-outline-primary mr-sm-2">S'enregistrer</a>
+                </li>
+                <% } %>
+            </ul>
         </div>
-    </nav>
+    </div>
+
 </header>
 <body>
