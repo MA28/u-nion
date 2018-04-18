@@ -6,3 +6,14 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+footer{
+
+    margin-top: 30px;
+
+}
+
+.footer-inner-container{
+    padding: 10px;
+    border-top: 1px solid gray;
+}
